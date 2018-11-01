@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+dist/
+typings/
+*.orig
+.idea/
+*/src/**/*.js.map
+**/.vscode/
+**/.cache
+yarn.lock
+*.log
+lib/
+es/
+package-lock.json
+.cache/
