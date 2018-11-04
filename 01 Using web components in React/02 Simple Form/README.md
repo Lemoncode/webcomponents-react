@@ -44,15 +44,13 @@ export class Form extends Component {
 
   render() {
     return (
-      <>
-        <form>
-          <wired-input
-            ref={this.nameRef}
-            placeholder="Name"
-            value={this.props.user.name}
-          />
-        </form>
-      </>
+      <form>
+        <wired-input
+          ref={this.nameRef}
+          placeholder="Name"
+          value={this.props.user.name}
+        />
+      </form>
     );
   }
 }
@@ -202,27 +200,25 @@ export class Form extends Component {
 
   render() {
     return (
-      <>
-        <form>
-          <wired-input
-            ref={this.nameRef}
-            placeholder="Name"
-            value={this.props.user.name}
-          />
-+         <wired-combo
-+           ref={this.countryIdRef}
-+           selected={this.props.user.countryId}
-+         >
-+           {this.props.countries.map(country => (
-+             <wired-item
-+               key={country.id}
-+               value={country.id}
-+               text={country.name}
-+             />
-+           ))}
-+         </wired-combo>
-        </form>
-      </>
+      <form>
+        <wired-input
+          ref={this.nameRef}
+          placeholder="Name"
+          value={this.props.user.name}
+        />
++       <wired-combo
++         ref={this.countryIdRef}
++         selected={this.props.user.countryId}
++       >
++         {this.props.countries.map(country => (
++           <wired-item
++             key={country.id}
++             value={country.id}
++             text={country.name}
++           />
++         ))}
++       </wired-combo>
+      </form>
     );
   }
 }
@@ -277,13 +273,11 @@ export class Form extends Component {
 
   render() {
     return (
-      <>
-        <form>
+      <form>
 ...
-          </wired-combo>
-+         <wired-button ref={this.submitRef}>Submit</wired-button>
-        </form>
-      </>
+        </wired-combo>
++       <wired-button ref={this.submitRef}>Submit</wired-button>
+      </form>
     );
   }
 }

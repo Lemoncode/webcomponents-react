@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.form > .input {
+  margin-left: 2rem;
+}
+
+.form > .select {
+  margin-left: 2rem;
+  --wired-combo-item-hover-bg: white;
+  --wired-combo-item-selected-bg: gray;
+  --wired-combo-popup-bg: #dedede;
+}
+
+.form > .button {
+  margin-left: 2rem;
+}
+
+.form > .button:focus {
+  background-color: lightgreen;
+}
+
+.form > .button:global(.disabled) {
+  background-color: tomato;
+}

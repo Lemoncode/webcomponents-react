@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './form.css';
 
 export class Form extends Component {
   nameRef = React.createRef();
@@ -26,13 +27,15 @@ export class Form extends Component {
 
   render() {
     return (
-      <form>
+      <form className={styles.form}>
         <wired-input
+          class={styles.input}
           ref={this.nameRef}
           placeholder="Name"
           value={this.props.user.name}
         />
         <wired-combo
+          class={styles.select}
           ref={this.countryIdRef}
           selected={this.props.user.countryId}
         >
@@ -45,7 +48,13 @@ export class Form extends Component {
           ))}
         </wired-combo>
 
-        <wired-button ref={this.submitRef}>Submit</wired-button>
+        <wired-button
+          class={styles.button}
+          ref={this.submitRef}
+          disabled={true}
+        >
+          Submit
+        </wired-button>
       </form>
     );
   }
