@@ -154,3 +154,15 @@ npm run build
 cd playground
 npm start
 ```
+
+- Update `build` command to update playground dependency:
+
+_./package.json_
+
+```diff
+  "scripts": {
+-   "build": "rimraf dist && parcel build ./src/index.jsx"
++   "build": "rimraf dist && parcel build ./src/index.jsx && npm run install:playground",
++   "install:playground": "cd playground && npm i"
+  },
+```

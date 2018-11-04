@@ -4,7 +4,8 @@
   "description": "Add boilerplate to create a React app.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && parcel build ./src/index.jsx"
+    "build": "rimraf dist && parcel build ./src/index.jsx && npm run install:playground",
+    "install:playground": "cd playground && npm i"
   },
   "author": "Lemoncode",
   "license": "MIT",
