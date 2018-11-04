@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '@webcomponents/webcomponentsjs';
+import 'wired-elements';
 
 const HelloComponent = () => (
   <div>
     <h1>Hello from React</h1>
-    <twitter-button type="follow" width="200" height="30" user="user" />
+    <wired-button elevation={2}>Submit</wired-button>
+    <wired-button disabled={true}>Cancel</wired-button>
   </div>
 );
 
