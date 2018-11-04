@@ -12,7 +12,7 @@
     "@webcomponents/webcomponentsjs": "^2.1.3",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "wired-elements": "0.7.2"
+    "my-web-component": "file:../"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "parcel-bundler": "^1.10.3",
+    "postcss-modules": "^1.4.1",
     "rimraf": "^2.6.2"
   }
 }

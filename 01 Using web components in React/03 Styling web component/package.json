@@ -4,8 +4,7 @@
   "description": "Add boilerplate to create a React app.",
   "main": "index.js",
   "scripts": {
-    "start": "rimraf dist && parcel ./src/index.html --open",
-    "build": "rimraf dist && parcel ./src/index.html"
+    "start": "rimraf dist && parcel ./src/index.html --open"
   },
   "author": "Lemoncode",
   "license": "MIT",
