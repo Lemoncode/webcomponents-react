@@ -56,7 +56,7 @@ export class Form extends Component {
 }
 ```
 
-> IMPORTANT: This library is only to create readonly components, so we have not access to onChange, onClick, etc, events.
+> IMPORTANT: Because React implements its own synthetic event system, it cannot listen for DOM events coming from Custom Elements without the use of a workaround.
 >
 > That's why we have to create `input` event listener
 

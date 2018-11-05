@@ -6,7 +6,11 @@ But, is it possible to use Web Components in React or React to create Web compon
 
 According to [React documentation](https://reactjs.org/docs/web-components.html): "React and Web Components are built to solve different problems... As a developer, you are free to use React in your Web Components, or to use Web Components in React or both"
 
-We could start to play with some simple examples to know limitations about that:
+We could start to play with some simple examples to know limitations about that.
+
+# Web Components React Roadmap
+
+- [RFC: Plan for custom elements in React 17](https://github.com/facebook/react/issues/11347) opened on 24 Oct 2017. Not closed yet.
 
 ## Resources
 
@@ -17,3 +21,5 @@ We could start to play with some simple examples to know limitations about that:
 - [Can I use web components?](https://caniuse.com/#search=web%20components)
 
 - [Web components polyfills](https://github.com/webcomponents/webcomponentsjs)
+
+- [custom-elements-everywhere](https://custom-elements-everywhere.com/)
