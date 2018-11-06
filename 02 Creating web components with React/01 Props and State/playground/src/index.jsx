@@ -9,6 +9,6 @@ const user = {
 };
 
 ReactDOM.render(
-  <login-component user={user} />,
+  <login-component user={JSON.stringify(user)} />,
   document.getElementById('root')
 );

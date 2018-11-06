@@ -17,7 +17,7 @@ class LoginComponent extends HTMLElement {
   }
 
   set user(value) {
-    this.setAttribute('user', value);
+    this.setAttribute('user', JSON.stringify(value));
   }
 
   get user() {

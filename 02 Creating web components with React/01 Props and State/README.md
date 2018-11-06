@@ -271,8 +271,89 @@ ReactDOM.render(
 
 ```
 
-- If we run this, `user` has `[object Object]` value because [getAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute) returns the `string` value from element attribute and [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) will convert automatically into a string for any non-string value specified.
+- If we run this, `user` has `[object Object]` value.
 
 ![user value](./ReadmeResources/user-value.png)
 
+- That means, maybe we need some `JSON.stringify` before `object` is parsing to `string`. Let's take a look with a `console.log`:
+
+_./src/index.jsx_
+
+```diff
+  get user() {
+-   return this.getAttribute('user');
++   const value = this.getAttribute('user');
++   const valueAsString = JSON.stringify(value);
++   console.log(`User property value: ${valueAsString}`);
++   return value;
+  }
+```
+
+- Run again:
+
+```bash
+npm run build
+cd ./playground
+npm start
+```
+
+- The result is: 
+
+`User property value: "[object Object]"`.
+
+- It's because [getAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute) returns the `string` value from element attribute and [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) will convert automatically into a string for any non-string value specified.
+
+- So, we will need that React provides the stringified object to web component, something like:
+
+_./playground/src/index.jsx_
+
+```diff
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '@webcomponents/webcomponentsjs';
+import 'my-web-component';
+
+const user = {
+  name: 'test',
+  password: 'pass',
+};
+
+ReactDOM.render(
++ <login-component user={user} />,
+- <login-component user={JSON.stringify(user)} />,
+  document.getElementById('root')
+);
+
+```
+
+- And update the `get` and `set` methods:
+
+_./src/index.jsx_
+
+```diff
+  set user(value) {
+-   this.setAttribute('user', value);
++   this.setAttribute('user', JSON.stringify(value));
+  }
+
+  get user() {
+    const value = this.getAttribute('user');
+-   const valueAsString = JSON.stringify(value);
+-   console.log(`User property value: ${valueAsString}`);
++   console.log(`User property value: ${value}`);
+-   return value;
++   return JSON.parse(value);
+  }
+```
+
+![render with JSON.stringify](./ReadmeResources/render-with-JSON.stringify.png)
+
+- Console result:
+
+```
+User property value: {"name":"test","password":"pass"}
+```
+
 - For primitive data this is fine, but the system breaks down when passing rich data, like objects or arrays. In these instances you end up with stringified values like `user="[object Object]"` which can't actually be used.
+
+- We find same situation with `events` because React implements its own synthetic event system, it cannot listen for DOM events coming from custom elements without the use of a same workarounds we use on sample `02 Simple Form`.
