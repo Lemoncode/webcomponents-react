@@ -44,7 +44,7 @@ If we want use React for that purpose:
 
 ### Use WC on React
 
-In previous examples, we saw that React supports only primitive data pass down through properties that means we can not pass objects, arrays or callbacks. We have even noted that handling events with React and WC could be cumbersome due to we have to use a workaround to listen events like we saw on _02 Simple Form_ example:
+In previous examples, we saw that React supports `only primitive data` pass down through properties. That means we can not pass objects, arrays or callbacks. We have even noted that handling events with React and WC could be cumbersome due to we have to use a workaround to listen events like we saw on _02 Simple Form_ example:
 
 ```javascript
 export class Form extends Component {
@@ -73,6 +73,8 @@ export class Form extends Component {
 }
 ```
 
+- [Unit test for React WC support](https://custom-elements-everywhere.com/libraries/react/results/results.html)
+
 If we using Preact, we can pass rich data like objects or arrays. Also, we can handle events in a declarative way like:
 
 ```javascript
@@ -82,7 +84,7 @@ If we using Preact, we can pass rich data like objects or arrays. Also, we can h
 />
 ```
 
-But it doesn't support `camelCase` syntax: [Preact support tests](https://custom-elements-everywhere.com/libraries/preact/results/results.html)
+But it doesn't support `camelCase` syntax. [Unit test for Preact WC support](https://custom-elements-everywhere.com/libraries/preact/results/results.html)
 
 # Web Components React Roadmap
 
