@@ -15,7 +15,7 @@ When we are working with `web components` (naming too `custom-elements`) we have
 - Create web component
 - Use web component
 
-That means, we could create a web component with one technology and consume it with other different thechnology (as we did on samples _03 Using web components in Preact_).
+That means, we could create a web component with one technology and consume it with other one (as we did on samples _03 Using web components in Preact_).
 
 ### Create WC with React
 
